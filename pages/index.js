@@ -249,6 +249,7 @@ export default function Home() {
   const [category, setCategory] = useState("all");
   const [favorites, setFavorites] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const addToFavorites = () => {
     if (!favorites.includes(proverb)) {
@@ -276,6 +277,15 @@ export default function Home() {
       "_blank"
     );
   };
+  const toggleMusic = () => {
+    const audio = document.querySelector("audio");
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <div
@@ -285,6 +295,10 @@ export default function Home() {
           : "bg-gradient-to-br from-blue-100 to-purple-100 text-gray-900"
       } transition-colors duration-300`}
     >
+      <audio autoPlay loop>
+        <source src="/folklore.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
       <button
         onClick={() => setDarkMode(!darkMode)}
         className={`fixed top-4 right-4 p-3 rounded-full ${
@@ -347,6 +361,14 @@ export default function Home() {
             className="bg-purple-500 text-white px-6 py-3 rounded-lg hover:bg-purple-600 transition-all duration-300 flex items-center gap-2"
           >
             <FaShareAlt /> Share
+          </button>
+        </div>
+        <div className="text-center">
+          <button
+            onClick={toggleMusic}
+            className="mt-6 p-3 text-lg bg-pink-600 text-white rounded-lg cursor-pointer transition-transform hover:scale-105 active:scale-95 shadow-md"
+          >
+            {isPlaying ? "Pause Music" : "Play Music"}
           </button>
         </div>
 
