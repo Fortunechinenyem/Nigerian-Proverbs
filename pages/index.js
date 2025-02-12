@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaHeart, FaShareAlt, FaMoon, FaSun } from "react-icons/fa";
+
 const proverbs = [
   {
     id: 1,
@@ -243,7 +244,68 @@ const proverbs = [
     text: "A person who does not know how to paint will blame the brush.",
     category: "humor",
   },
+  {
+    id: 51,
+    text: "Idan kura ta ce za ta yi gudu, natafa natafa ne.",
+    category: "Hausa",
+  },
+  {
+    id: 52,
+    text: "Bí òjé bá mọ ìrìn, ó ní òkè lókè ń rẹ̀.",
+    category: "Yoruba",
+  },
+  {
+    id: 53,
+    text: "A na-eyi nwa oké akụ, ọ bụrụ na ọ nweghị isi, ọ sị na ọnụ ụzọ ejighi mma.",
+    category: "Igbo",
+  },
+  {
+    id: 54,
+    text: "Kifi ba ta iya iyo, ta ce ruwa ne matsala.",
+    category: "Hausa",
+  },
+  {
+    id: 55,
+    text: "Ìkànsí kì í jé kó mọ ìdí adídùn.",
+    category: "Yoruba",
+  },
+  {
+    id: 56,
+    text: "Ọtụtụ aka na-eme ka nri sie ngwa ngwa.",
+    category: "Igbo",
+  },
+  {
+    id: 57,
+    text: "Wanda bai iya dinki ba, zai ce allura ba ta da kyau.",
+    category: "Hausa",
+  },
+  {
+    id: 58,
+    text: "Ẹja tí kò bá mọ̀ bí a ṣe ń ṣèrè, ó ní omi kún tó.",
+    category: "Yoruba",
+  },
+  {
+    id: 59,
+    text: "Onye na-enweghị nka, na-ekwusi osisi ike.",
+    category: "Igbo",
+  },
+  {
+    id: 60,
+    text: "Baƙo da bai iya girki ba, zai ce tukunya ba ta da kyau.",
+    category: "Hausa",
+  },
+  {
+    id: 61,
+    text: "Agbára tí kò mọ iṣẹ́ ọnà, ó ní brọshì ni kùsì.",
+    category: "Yoruba",
+  },
+  {
+    id: 62,
+    text: "Onye na-enweghị aka, na-ekwusi mma ike.",
+    category: "Igbo",
+  },
 ];
+
 export default function Home() {
   const [proverb, setProverb] = useState(proverbs[0]);
   const [category, setCategory] = useState("all");
@@ -277,6 +339,7 @@ export default function Home() {
       "_blank"
     );
   };
+
   const toggleMusic = () => {
     const audio = document.querySelector("audio");
     if (isPlaying) {
@@ -339,6 +402,9 @@ export default function Home() {
             <option value="wisdom">Wisdom</option>
             <option value="humor">Humor</option>
             <option value="life lessons">Life Lessons</option>
+            <option value="Hausa">Hausa</option>
+            <option value="Yoruba">Yoruba</option>
+            <option value="Igbo">Igbo</option>
           </select>
 
           <button
